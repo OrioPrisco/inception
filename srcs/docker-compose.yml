@@ -1,0 +1,12 @@
+services:
+  nginx:
+    init: true
+    build: requirements/nginx
+    ports:
+      - "443"
+  wordpress:
+    init: true
+    build: requirements/wordpress
+  mariadb:
+    init: true
+    build: requirements/mariadb
