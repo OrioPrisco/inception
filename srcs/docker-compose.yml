@@ -3,7 +3,8 @@ services:
     init: true
     build: requirements/nginx
     ports:
-      - "443"
+      - "4443:443"
+      - "8080:80"
   wordpress:
     init: true
     build: requirements/wordpress
