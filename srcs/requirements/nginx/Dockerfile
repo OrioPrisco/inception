@@ -1,3 +1,4 @@
 FROM alpine:3.19
 RUN apk update && apk add nginx
+COPY nginx.conf /etc/nginx/nginx.conf
 CMD ["nginx", "-g", "daemon off;"]
