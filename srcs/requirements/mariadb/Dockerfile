@@ -9,5 +9,5 @@ RUN chown mysql:mysql /run/mysqld
 
 RUN mysql_install_db -umysql --ldata=/var/lib/mysql
 
-CMD ["tail", "-f"]
+CMD ["mariadbd", "-umysql"]
 
