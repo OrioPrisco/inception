@@ -6,8 +6,10 @@ RUN chown mysql:mysql /var/lib/mysql/
 RUN mkdir /run/mysqld
 RUN chown mysql:mysql /run/mysqld
 
-
 RUN mysql_install_db -umysql --ldata=/var/lib/mysql
+
+COPY conf/mariadb-server.cnf /etc/my.cnf.d/
+
 
 CMD ["mariadbd", "-umysql"]
 
