@@ -8,4 +8,4 @@ build:
 down:
 	docker compose -f srcs/docker-compose.yml down
 
-.PHONY: up build
+.PHONY: up build down
