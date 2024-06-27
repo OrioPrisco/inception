@@ -5,9 +5,17 @@ services:
     ports:
       - "4443:443"
       - "8080:80"
+    volumes:
+      - wordpress:/mnt/app/
   wordpress:
     init: true
     build: requirements/wordpress
+    volumes:
+      - wordpress:/mnt/app/
   mariadb:
     init: true
     build: requirements/mariadb
+
+volumes:
+  wordpress:
+  db:
