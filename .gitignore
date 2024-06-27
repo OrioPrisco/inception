@@ -2,3 +2,4 @@
 *.swp
 *.swo
 .gdb_history
+.env
