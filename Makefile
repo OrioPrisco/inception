@@ -8,4 +8,11 @@ build:
 down:
 	docker compose -f srcs/docker-compose.yml down
 
-.PHONY: up build down
+clean: down
+
+fclean: clean
+	docker compose -f srcs/docker-compose.yml rm
+
+re: fclean up
+
+.PHONY: up build down clean fclean re
