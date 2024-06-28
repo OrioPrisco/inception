@@ -12,11 +12,17 @@ services:
     build: requirements/wordpress
     volumes:
       - wordpress:/mnt/app/
+    environment:
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
   mariadb:
     init: true
     build: requirements/mariadb
     volumes:
       - db:/var/lib/mysql/
+    environment:
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
 
 volumes:
   wordpress:

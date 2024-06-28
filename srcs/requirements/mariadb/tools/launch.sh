@@ -17,9 +17,17 @@ else
 		exit 1
 	fi
 
-	kill -9 $pid
 
 	echo "created db"
+
+	echo "
+	CREATE User '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';
+	GRANT ALL PRIVILEGES ON wordpress.* TO '$MYSQL_USER'@'%';
+	" | mysql
+
+	echo "created db user"
+
+	kill -9 $pid
 fi
 
 exec mariadbd -umysql
