@@ -7,6 +7,7 @@ services:
       - "8080:80"
     volumes:
       - wordpress:/mnt/app/
+    restart: always
   wordpress:
     init: true
     build: requirements/wordpress
@@ -15,6 +16,7 @@ services:
     environment:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    restart: always
   mariadb:
     init: true
     build: requirements/mariadb
@@ -23,6 +25,7 @@ services:
     environment:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    restart: always
 
 volumes:
   wordpress:
