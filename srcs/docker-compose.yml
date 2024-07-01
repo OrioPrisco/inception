@@ -26,6 +26,10 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     restart: always
+  adminer:
+    init: true
+    build: requirements/adminer
+    restart: always
 
 volumes:
   wordpress:
