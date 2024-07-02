@@ -30,6 +30,15 @@ services:
     init: true
     build: requirements/adminer
     restart: always
+  ftp:
+    init: true
+    build: requirements/ftp
+    restart: always
+    volumes:
+      - wordpress:/mnt/app/
+    ports:
+      - "2221:21"
+      - "2220:20"
 
 volumes:
   wordpress:
