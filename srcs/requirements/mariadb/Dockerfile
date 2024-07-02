@@ -8,6 +8,7 @@ RUN chown mysql:mysql /run/mysqld
 
 COPY conf/mariadb-server.cnf /etc/my.cnf.d/
 COPY tools/launch.sh /bin/launch.sh
+COPY tools/wordpress.sql /etc/wordpress.sql
 
 CMD ["sh", "/bin/launch.sh"]
 

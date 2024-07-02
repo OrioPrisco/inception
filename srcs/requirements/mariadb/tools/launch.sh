@@ -27,6 +27,10 @@ else
 
 	echo "created db user"
 
+	< /etc/wordpress.sql mysql
+
+	echo "populated db"
+
 	kill -9 $pid
 fi
 
