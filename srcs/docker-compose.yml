@@ -4,7 +4,6 @@ services:
     build: requirements/nginx
     ports:
       - "4443:443"
-      - "8080:80"
     volumes:
       - wordpress:/mnt/app/
     restart: always
