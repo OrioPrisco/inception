@@ -27,11 +27,11 @@ services:
     restart: always
   adminer:
     init: true
-    build: requirements/adminer
+    build: requirements/bonus/adminer
     restart: always
   ftp:
     init: true
-    build: requirements/ftp
+    build: requirements/bonus/ftp
     restart: always
     volumes:
       - wordpress:/mnt/app/
@@ -41,7 +41,7 @@ services:
       - "10090-10100:10090-10100"
   static-website:
     init: true
-    build: requirements/static-website
+    build: requirements/bonus/static-website
     restart: always
 
 volumes:
