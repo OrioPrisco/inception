@@ -39,6 +39,10 @@ services:
       - "2221:21"
       - "2220:20"
       - "10090-10100:10090-10100"
+  static-website:
+    init: true
+    build: requirements/static-website
+    restart: always
 
 volumes:
   wordpress:
