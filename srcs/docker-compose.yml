@@ -51,6 +51,14 @@ services:
       args:
         REDIS_PASSWORD: ${REDIS_PASSWORD}
     restart: always
+  ssh:
+    init: true
+    build: requirements/bonus/ssh
+    restart: always
+    volumes:
+      - wordpress:/mnt/app/
+    ports:
+      - "2222:22"
 
 volumes:
   wordpress:
