@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 
-if find /mnt/app -mindepth1 -maxdepth1 | read; then
+if find /mnt/app -mindepth 1 -maxdepth 1 | read; then
 	echo "Site already exists"
 else
 	echo "Creating website"
