@@ -37,6 +37,13 @@ define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+$redis_server = array(
+	'host'     => 'redis',
+	'port'     => 6379,
+	'auth'     => 'REDIS_PASSWORD',
+	'database' => 0, // Optionally use a specific numeric Redis database. Default is 0.
+);
+
 /**#@+
  * Authentication unique keys and salts.
  *

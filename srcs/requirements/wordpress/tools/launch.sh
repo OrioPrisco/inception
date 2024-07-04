@@ -12,7 +12,11 @@ else
 	unzip latest.zip
 	mv wordpress/* .
 	rmdir wordpress
-	sed "s/username_here/$MYSQL_USER/;s/password_here/$MYSQL_PASSWORD/" /etc/wp-config-sample.php > wp-config.php
+	sed "s/username_here/$MYSQL_USER/;s/password_here/$MYSQL_PASSWORD/;s/REDIS_PASSWORD/$REDIS_PASSWORD/;" /etc/wp-config-sample.php > wp-config.php
+
+	wp plugin install wp-redis
+	wp plugin activate wp-redis
+	wp redis enable
 fi
 
 exec php-fpm82 -F
