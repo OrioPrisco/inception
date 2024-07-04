@@ -43,6 +43,13 @@ services:
     init: true
     build: requirements/bonus/static-website
     restart: always
+  redis:
+    init: true
+    build:
+      context: requirements/bonus/redis/
+      args:
+        REDIS_PASSWORD: ${REDIS_PASSWORD}
+    restart: always
 
 volumes:
   wordpress:
