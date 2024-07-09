@@ -3,7 +3,7 @@ services:
     init: true
     build: requirements/nginx
     ports:
-      - "4443:443"
+      - "443:443"
     volumes:
       - wordpress:/mnt/app/
     restart: always
@@ -37,8 +37,8 @@ services:
     volumes:
       - wordpress:/mnt/app/
     ports:
-      - "2221:21"
-      - "2220:20"
+      - "21:21"
+      - "20:20"
       - "10090-10100:10090-10100"
   static-website:
     init: true
@@ -62,7 +62,7 @@ services:
     volumes:
       - wordpress:/mnt/app/
     ports:
-      - "2222:22"
+      - "22:22"
 
 volumes:
   wordpress:
