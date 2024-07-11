@@ -1,8 +1,10 @@
 
-up: | $(HOME)/data
+VOLUMES = $(HOME)/data/db $(HOME)/data/wordpress
+
+up: | $(VOLUMES)
 	docker compose -f srcs/docker-compose.yml up --build -d
 
-build: | $(HOME)/data
+build: | $(VOLUMES)
 	docker compose -f srcs/docker-compose.yml build
 
 down:
@@ -15,7 +17,7 @@ fclean: clean
 
 re: fclean up
 
-$(HOME)/data:
-	mkdir $(HOME)/data/
+$(VOLUMES):
+	mkdir -p $(VOLUMES)
 
 .PHONY: up build down clean fclean re
