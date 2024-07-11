@@ -77,3 +77,8 @@ volumes:
       o: bind
       type: none
       device: ${HOME}/data/db
+
+networks:
+  default:
+    name: inception
+    driver: bridge
