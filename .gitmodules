@@ -1,0 +1,3 @@
+[submodule "srcs/requirements/bonus/static-website/tools/STAR"]
+	path = srcs/requirements/bonus/static-website/tools/STAR
+	url = https://github.com/OrioPrisco/STAR.git

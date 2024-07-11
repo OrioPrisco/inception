@@ -5,6 +5,6 @@ RUN openssl req -newkey rsa:4096  -x509  -sha512  -days 365 -nodes -out /etc/ngi
 
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
-COPY ./tools/index.html /var/www/html/index.html
+COPY ./tools/STAR/ /var/www/html/STAR/
 
 CMD ["nginx", "-g", "daemon off;"]
