@@ -1,10 +1,11 @@
 
 VOLUMES = $(HOME)/data/db $(HOME)/data/wordpress
+SUBMODULE = srcs/requirement/bonus/static-website/tools/STAR/web
 
-up: | $(VOLUMES)
+up: | $(VOLUMES) $(SUBMODULE)
 	docker compose -f srcs/docker-compose.yml up --build -d
 
-build: | $(VOLUMES)
+build: | $(VOLUMES) $(SUBMODULE)
 	docker compose -f srcs/docker-compose.yml build
 
 down:
@@ -19,5 +20,8 @@ re: fclean up
 
 $(VOLUMES):
 	mkdir -p $(VOLUMES)
+
+$(SUBMODULE):
+	git submodule update --init $<
 
 .PHONY: up build down clean fclean re
