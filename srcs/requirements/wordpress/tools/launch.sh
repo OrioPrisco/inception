@@ -14,6 +14,8 @@ else
 	rmdir wordpress
 	sed "s/username_here/$MYSQL_USER/;s/password_here/$MYSQL_PASSWORD/;s/REDIS_PASSWORD/$REDIS_PASSWORD/;" /etc/wp-config-sample.php > wp-config.php
 
+	sleep 10 #Make sure the databaseis launched, otherwise the following will not work
+
 	wp plugin install wp-redis
 	wp plugin activate wp-redis
 	wp redis enable
