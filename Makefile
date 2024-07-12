@@ -1,6 +1,6 @@
 
 VOLUMES = $(HOME)/data/db $(HOME)/data/wordpress
-SUBMODULE = srcs/requirement/bonus/static-website/tools/STAR/web
+SUBMODULE = srcs/requirements/bonus/static-website/tools/STAR/web
 
 up: | $(VOLUMES) $(SUBMODULE)
 	docker compose -f srcs/docker-compose.yml up --build -d
