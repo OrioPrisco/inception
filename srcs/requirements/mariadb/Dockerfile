@@ -10,5 +10,8 @@ COPY conf/mariadb-server.cnf /etc/my.cnf.d/
 COPY tools/launch.sh /bin/launch.sh
 COPY tools/wordpress.sql /etc/wordpress.sql
 
+
+HEALTHCHECK --start-period=5s --timeout=5s CMD mysql
+
 CMD ["sh", "/bin/launch.sh"]
 
