@@ -10,6 +10,9 @@ services:
   wordpress:
     init: true
     build: requirements/wordpress
+    depends_on:
+      mariadb:
+        condition: service_healthy
     volumes:
       - wordpress:/mnt/app/
     environment:
